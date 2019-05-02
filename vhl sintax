@@ -1,0 +1,14 @@
+
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+
+ENTITY parity_generator IS
+
+END parity_generator;
+
+ARCHITECTURE logic OF parity_generator IS
+	
+BEGIN
+
+	
+END;
