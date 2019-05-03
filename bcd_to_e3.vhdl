@@ -24,8 +24,17 @@ begin
 				when "0111" => saida <= "1010";
 				when "1000" => saida <= "1011";
 				when "1001" => saida <= "1100";
+				when "1010" => saida <= "0001";
+				when "1011" => saida <= "0001";
+				when "1100" => saida <= "0001";
+				when "1101" => saida <= "0001";
+				when "1110" => saida <= "0001";
+				when "1111" => saida <= "0001";
 				when others => saida <= "0000";
 			end case;
 		end process;
 	end behv;
+	
+
+
 	
