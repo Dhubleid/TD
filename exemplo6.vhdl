@@ -1,5 +1,3 @@
-//https://www.cs.sfu.ca/~ggbaker/reference/std_logic/1164/std_logic.html
-//https://vhdlwhiz.com/std_logic_vector/
 
 LIBRAIRY IEEE
 USE ieee_std_logic_1164
