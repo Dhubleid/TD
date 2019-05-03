@@ -2,9 +2,9 @@
 LIBRAIRY IEEE
 USE ieee_std_logic_1164
   
-entity is exemplo 
+entity is exemplo6
   port( S : out std_logic
-  end exemplo; 
+  end exemplo6; 
         
 arquiteture exem of exemplo6 is
        
