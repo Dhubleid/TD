@@ -14,5 +14,3 @@ architecture arch_half_adder of half_adder is
     sum <= a xor b;
     carry <= a and b;
  end arch_half_adder;
-  
-
