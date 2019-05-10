@@ -31,16 +31,16 @@ signal tempCarry : std_logic_vector (2 downto 0);
 begin
 
 	Half: half_adder
-				port map(a => numA(3), b => numB(3), sum => soma(3), carry => tempCarry(2));
+				port map(a => numA(0), b => numB(0), sum => soma(0), carry => tempCarry(0));
 	
 	full_2: full_adder
-				port map(x => numA(2), y => numB(2), c_in => tempCarry(2), s => soma(2), c_out => tempCarry(1));
+				port map(x => numA(1), y => numB(1), c_in => tempCarry(1), s => soma(1), c_out => tempCarry(1));
 	
 	full_1: full_adder
-				port map(x => numA(1), y => numB(1), c_in => tempCarry(1), s => soma(1), c_out => tempCarry(0));
+				port map(x => numA(2), y => numB(2), c_in => tempCarry(2), s => soma(2), c_out => tempCarry(2));
 					
 	full_0: full_adder
-				port map(x => numA(0), y => numB(0), c_in => tempCarry(0), s => soma(0), c_out => carry_out);
+				port map(x => numA(3), y => numB(3), c_in => tempCarry(3), s => soma(3), c_out => carry_out);
 				
 
 end arch_parallel;
