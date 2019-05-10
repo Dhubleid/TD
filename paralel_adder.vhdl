@@ -33,15 +33,14 @@ begin
 	Half: half_adder
 				port map(a => numA(0), b => numB(0), sum => soma(0), carry => tempCarry(0));
 	
-	full_2: full_adder
-				port map(x => numA(1), y => numB(1), c_in => tempCarry(1), s => soma(1), c_out => tempCarry(1));
+	full_0: full_adder
+				port map(x => numA(1), y => numB(1), c_in => tempCarry(0), s => soma(1), c_out => tempCarry(1));
 	
 	full_1: full_adder
-				port map(x => numA(2), y => numB(2), c_in => tempCarry(2), s => soma(2), c_out => tempCarry(2));
+				port map(x => numA(2), y => numB(2), c_in => tempCarry(1), s => soma(2), c_out => tempCarry(2));
 					
-	full_0: full_adder
-				port map(x => numA(3), y => numB(3), c_in => tempCarry(3), s => soma(3), c_out => carry_out);
+	full_2: full_adder
+				port map(x => numA(3), y => numB(3), c_in => tempCarry(2), s => soma(3), c_out => carry_out);
 				
 
 end arch_parallel;
-
