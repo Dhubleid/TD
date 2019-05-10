@@ -1,6 +1,6 @@
-use ieee;
+library ieee;
 
-librairy iee.std_logic.1164.all;
+use ieee.std_logic_1164.all;
 
 entity half_adder is
   port(
