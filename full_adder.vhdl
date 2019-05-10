@@ -28,6 +28,3 @@ begin
 	c_out <= tempC or tempC2;
 
 end arch2;
-				
-	
-
