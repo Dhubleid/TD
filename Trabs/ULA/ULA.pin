@@ -181,7 +181,7 @@ GND*                         : AD8       :        :                   :         
 GND                          : AD9       : gnd    :                   :         :           :                
 GND*                         : AD10      :        :                   :         : 8         :                
 out0[3]                      : AD11      : output : 3.3-V LVTTL       :         : 8         : Y              
-GND*                         : AD12      :        :                   :         : 8         :                
+overflow                     : AD12      : output : 3.3-V LVTTL       :         : 8         : Y              
 numB[3]                      : AD13      : input  : 3.3-V LVTTL       :         : 8         : Y              
 GND                          : AD14      : gnd    :                   :         :           :                
 GND*                         : AD15      :        :                   :         : 7         :                
@@ -207,7 +207,7 @@ GND*                         : AE8       :        :                   :         
 GND*                         : AE9       :        :                   :         : 8         :                
 GND*                         : AE10      :        :                   :         : 8         :                
 out0[4]                      : AE11      : output : 3.3-V LVTTL       :         : 8         : Y              
-GND*                         : AE12      :        :                   :         : 8         :                
+zero                         : AE12      : output : 3.3-V LVTTL       :         : 8         : Y              
 GND*                         : AE13      :        :                   :         : 8         :                
 numB[1]                      : AE14      : input  : 3.3-V LVTTL       :         : 7         : Y              
 GND*                         : AE15      :        :                   :         : 7         :                
@@ -218,7 +218,7 @@ GND*                         : AE19      :        :                   :         
 GND*                         : AE20      :        :                   :         : 7         :                
 GND*                         : AE21      :        :                   :         : 7         :                
 GND*                         : AE22      :        :                   :         : 7         :                
-zero                         : AE23      : output : 3.3-V LVTTL       :         : 7         : Y              
+GND*                         : AE23      :        :                   :         : 7         :                
 ~LVDS150p/nCEO~              : AE24      : output : 3.3-V LVTTL       :         : 6         : N              
 GND*                         : AE25      :        :                   :         : 6         :                
 GND                          : AE26      : gnd    :                   :         :           :                
@@ -243,7 +243,7 @@ GND*                         : AF19      :        :                   :         
 GND*                         : AF20      :        :                   :         : 7         :                
 GND*                         : AF21      :        :                   :         : 7         :                
 GND*                         : AF22      :        :                   :         : 7         :                
-overflow                     : AF23      : output : 3.3-V LVTTL       :         : 7         : Y              
+GND*                         : AF23      :        :                   :         : 7         :                
 VCCIO7                       : AF24      : power  :                   : 3.3V    : 7         :                
 GND                          : AF25      : gnd    :                   :         :           :                
 GND                          : B1        : gnd    :                   :         :           :                

@@ -32,8 +32,8 @@ architecture bhv_coversorC2 of coversorC2 is
 	bcdSeg : BCD_to_seg7 port map(entrada => tempC2, saida => saida0);
 	
 	with num(3) select saida1 <=
-		"0000001" when '1',
-		"0000000" when others;
+		"0111111"when '1',
+		"1111111" when others;
 	
 	end bhv_coversorC2;
 	

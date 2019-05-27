@@ -71,7 +71,7 @@ architecture bhv_ULA of ULA is
 			numA when '0',
 			numB when '1';
 		
-		somaSub : somadorSubtratror port map (numA => numA, numB => numB, controle => control_Div_Mult, soma => tempSS, overflow => overSomaSub);
+		somaSub : somadorSubtratror port map (numA => numA, numB => numB, controle => controlAB, soma => tempSS, overflow => overSomaSub);
 		
 		divide : divide2or4 port map (num => tempAB, control => control_Div_Mult, output1 => tempDiv, overflow => overD);
 		
@@ -87,11 +87,11 @@ architecture bhv_ULA of ULA is
 		
 		tempXOR <= numA xor numB;
 		
-		converB : coversorB port map (num => tempIN, saida0=> tempSaida0C2, saida1 => tempSaida1c2);
+		converB : coversorB port map (num => tempIN, saida0=> tempSaida0, saida1 => tempSaida1);
 		
-		converC2 : coversorC2 port map (num => tempIN, saida0=> tempSaida0, saida1 => tempSaida1);
+		converC2 : coversorC2 port map (num => tempIN, saida0=> tempSaida0C2, saida1 => tempSaida1c2);
 		
-		zero <= tempIN(3) and tempIN (2) and tempIN(1) and tempiN(0);
+		zero <= not tempIN(3) and not tempIN (2) and not tempIN(1) and not tempiN(0);
 		
 		with selectMenu select overflow <=
 			overSomaSub when "000",
