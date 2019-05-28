@@ -4,7 +4,7 @@ use ieee.std_logic_1164.all;
 
 entity ULA is
 	port (numA, numB : in std_logic_vector (3 downto 0);
-			control_Div_Mult : in std_logic;
+			controlOperations : in std_logic;
 			controlAB : in std_logic;
 			selectMenu : in std_logic_vector (2 downto 0);
 			zero : out std_logic;
@@ -71,11 +71,11 @@ architecture bhv_ULA of ULA is
 			numA when '0',
 			numB when '1';
 		
-		somaSub : somadorSubtratror port map (numA => numA, numB => numB, controle => controlAB, soma => tempSS, overflow => overSomaSub);
+		somaSub : somadorSubtratror port map (numA => numA, numB => numB, controle => controlOperations, soma => tempSS, overflow => overSomaSub);
 		
-		divide : divide2or4 port map (num => tempAB, control => control_Div_Mult, output1 => tempDiv, overflow => overD);
+		divide : divide2or4 port map (num => tempAB, control => controlOperations, output1 => tempDiv, overflow => overD);
 		
-		multipl : mult2or4 port map (num => tempAB, control => control_Div_Mult, output0 => tempMult, overflow => overM);
+		multipl : mult2or4 port map (num => tempAB, control => controlOperations, output0 => tempMult, overflow => overM);
 		
 		somaBin : parallel_adder port map (numA => numA, numB => numB, soma => tempSOMA, carry_out => overSoma);
 		
