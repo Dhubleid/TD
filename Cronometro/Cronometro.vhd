@@ -8,7 +8,7 @@ entity cronometro is
 	port(	Clock, Clear, Hold, ProgRegr, SecondsOrFast, Load: in std_logic;
 			Start : in std_logic_vector (5 downto 0);
 			Output1, Output2 : out std_logic_vector(6 downto 0);
-			);
+	);
 			
 architecture arch_crono of cronometro is
 signal enable : std_logic;
