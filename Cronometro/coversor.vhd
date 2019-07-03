@@ -13,12 +13,6 @@ end coversorB;
 architecture bhv_coversorB of coversorB is
 
 	signal temp1, temp2 : std_logic_vector (5 downto 0);
-	
-	component ConversorBCD is
-		port( 	entrada : in std_logic_vector (5 downto 0);
-			saida : out std_logic_vector (7 downto 0)
-		);
-	end component;
 
 	component BCD_to_seg7 is
 		port( 	entrada : in std_logic_vector (5 downto 0);
