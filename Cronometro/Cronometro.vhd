@@ -32,32 +32,41 @@ begin
 		end if;
 	end if;
 end process;
-
+signal tempCount : std_logic_vector (5 downto 0);
 process(Enable, Hold, Clear)
+begin	
 	variable count : std_logic_vector (5 downto 0);
 	if Clear = '1' then
-		Output1 = "0";
-		Output2 = "0";
-		Count := '0';
-	elsif(Load = '1') then 
-		Count := Start;
-		elsif Hold = '0' then
-			if Enable = '1' then
-				if progRegr = '0' then					
-					count := count + 1;
-					if count = 60 then
-						count = '0';
+		Output1 = 0;
+		Output2 = 0;
+		Count := 0;
+		elsif Load = '1' then 
+			Count := Start;
+			elsif Hold = '0' then
+				if Enable = '1' then
+					if progRegr = '0' then					
+						count := count + 1;
+						if count = 60 then
+							count = 0;
+						end if
+					else
+						if count > 0 then
+							count := count - 1;
+						end if;
 					end if
-				else
-					if count > 0 then
-						count := count - 1;
-					end if;
+				end if
+			end if
+		end if
+	end if
+	tempCount <= count;
+end process
+	
 				
 			
 			
 	
 
-		Coun
+	
 		
 	
 	
