@@ -1,38 +1,71 @@
 library ieee;
-
 use ieee.std_logic_1164.all;
 
-entity coversor is
-	port( num : in std_logic_vector (3 downto 0);
-			saida0, saida1 : out std_logic_vector (6 downto 0)
-	);	
-end coversorC2;
+entity coversorB is
+	port( 	entrada : in std_logic_vector (5 downto 0);
+		saida0, saida1 : out std_logic_vector (6 downto 0)
+	);
+end coversorB;
 
+architecture bhv_coversorB of coversorB is
 
-architecture bhv_coversorC2 of coversorC2 is
-
-	signal tempC2 : std_logic_vector (3 downto 0);
+	signal temp1, temp2 : std_logic_vector (5 downto 0);
 	
-	component ConversorBCDcomp2 is
-		port( entrada : in std_logic_vector (3 downto 0);
-				saida : out std_logic_vector (3 downto 0)
+	component ConversorBCD is
+		port( 	entrada : in std_logic_vector (5 downto 0);
+			saida : out std_logic_vector (7 downto 0)
 		);
 	end component;
-	
+
 	component BCD_to_seg7 is
-		port( entrada : in std_logic_vector (3 downto 0);
-				saida : out std_logic_vector (6 downto 0)
+		port( 	entrada : in std_logic_vector (5 downto 0);
+			saida : out std_logic_vector (6 downto 0)
 		);
 	end component;
 	
 	begin
+		process
+		begin
+			variable num : std_logic;
+			num := entrada;
+			if num < 9 then
+				temp1 <= num;
+				temp1 <= 0;
+				elsif num > 9 and num < 20 then
+					temp1 <= num - 10;
+					temp2 <= 1;
+					elsif num > 19 and num < 30 then
+						temp1 <= num - 20;
+						temp2 <= 2;
+						elsif num > 29 and num < 40 then
+							temp1 <= num - 30; 
+							temp2 <= 3;
+							elsif num > 39 and num < 50 then
+								temp1 <= num -40;
+								temp2 <= 4;
+								elsif num > 49 and num < 60 then
+									temp1 <= num - 50;
+									temp2 <= 5;
+								end if
+							end if
+						end if
+					end if
+				end if
+			end if
+		end process
+		
+		
+		bcd1 : ConversorBCD port map(entrada => entrada, saida => temp1);
+		
+		bcd2 : ConversorBCD port map(entrada => entrada, saida => temp2);
+		
+		seg7_1 : BCD_to_seg7 port map(entrada => temp1, saida => saida1);
+		
+		seg7_0 : BCD_to_seg7 port map(entrada => temp2, saida => saida0);
 	
-	bcdCmp : ConversorBCDcomp2 port map(entrada => num, saida => tempC2);
+	end bhv_coversorB;
+		
+		
 	
-	bcdSeg : BCD_to_seg7 port map(entrada => tempC2, saida => saida0);
+		
 	
-	with num(3) select saida1 <=
-		"0111111"when '1',
-		"1111111" when others;
-	
-	end bhv_coversorC2;
