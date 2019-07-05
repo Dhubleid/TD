@@ -2,7 +2,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 
 entity BCD_to_seg7 is
-	port( entrada : in std_logic_vector (3 downto 0);
+	port( entrada : in std_logic_vector (5 downto 0);
 			saida : out std_logic_vector (6 downto 0)
 	);
 end BCD_to_seg7;
