@@ -10,27 +10,28 @@ entity clockDivide is
 end clockDivide;
 
 architecture bhv of clockDivide is
+	signal clkD : integer;
+	signal count : integer := 1;
+	signal outp : std_logic := '0';
 begin
-	process(clk)
-		variable count: integer := 1 ;
-		variable clckD:  integer;
-		variable outp: std_logic;
+	
+	with ctrl select clkD <=
+		5000000 when '0',
+		100000000 when '1';
+	
+	process(clk, clear)
 	begin	
 		if clear = '1' then
-			outp := '0';
-			count := 1;		
-			elsif ctrl = '1' then
-				clckD := 25000000;
-				else 
-					clckD :=  1250000;	
-			if rising_edge(clk) then
-				count := count + 1;
-				if count = clckD then
-					outp := not outp;
-					count := 1;
+			outp <= '0';
+			count <= 1;
+			elsif rising_edge(clk) then
+				count <= count + 1;
+				if count = clkD then
+					outp <= not outp;
+					count <= 1;
 				end if;
-			end if;
 		end if;
+
 	clkOut <= outp;
 end process;
 				

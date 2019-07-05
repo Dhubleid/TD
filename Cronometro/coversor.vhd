@@ -25,9 +25,9 @@ begin
 		variable num : std_logic_vector (5 downto 0);
 		begin
 			num := entrada;
-			if num < 9 then
+			if num < 10 then
 				temp1 <= num;
-				temp1 <= "000000";
+				temp2 <= "000000";
 				elsif num > 9 and num < 20 then
 					temp1 <= num - 10;
 					temp2 <= "000001";

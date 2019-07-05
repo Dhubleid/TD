@@ -30,9 +30,8 @@ architecture arch_crono of cronometro is
 
 begin 
 
-	
- process(Hold, Clear, Clock, EnableC)
-	variable count : std_logic_vector (5 downto 0);
+ process(Hold, Clear, EnableC)
+	variable count : std_logic_vector (5 downto 0) := "000000";
 	begin	
 		if Clear = '1' then
 			tempCount <= "000000";
@@ -43,7 +42,7 @@ begin
 					Count := "111011";
 				end if;
 				elsif Hold = '0' then
-					if rising_edge(Clock) and EnableC = '1' then
+					if rising_edge(enableC) then
 							if progRegr = '0' then					
 								count := count + 1;
 									if count = 60 then

@@ -60,7 +60,6 @@ set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform2.vwf
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform3.vwf
-set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE "C:/Users/pc/Documents/td/Cronometro/Waveform3.vwf"
 set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
 set_location_assignment PIN_N2 -to Clock
 set_location_assignment PIN_V2 -to Clear
@@ -88,4 +87,8 @@ set_location_assignment PIN_Y22 -to Output2[3]
 set_location_assignment PIN_W21 -to Output2[2]
 set_location_assignment PIN_V21 -to Output2[1]
 set_location_assignment PIN_V20 -to Output2[0]
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform4.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform5.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform6.vwf
+set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE "C:/Users/pc/Documents/td/Cronometro/Waveform2.vwf"
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
