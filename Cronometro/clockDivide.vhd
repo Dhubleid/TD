@@ -16,8 +16,8 @@ architecture bhv of clockDivide is
 begin
 	
 	with ctrl select clkD <=
-		5000000 when '0',
-		100000000 when '1';
+		50000000 when '0',
+		5000000 when '1';
 	
 	process(clk, clear)
 	begin	
